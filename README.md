@@ -1,15 +1,15 @@
-<<<<<<< HEAD
+
 # Sweet Shop Management System
 
 A full-stack web application for managing a traditional Indian sweet shop, built with **Spring Boot** backend and **React TypeScript** frontend.
 
-## � Overview
+## Overview
 
 The Sweet Shop Management System is designed to streamline operations for traditional sweet shops, providing comprehensive management tools for inventory, orders, and customer interactions. The system supports role-based access with dedicated interfaces for administrators and customers.
 
-## ✨ Features
+## Features
 
-### 👨‍💼 Admin Features
+### Admin Features
 - **Dashboard Management**: Simple and intuitive admin homepage
 - **Sweet Management**: Add, edit, delete, and manage sweet inventory
 - **Pricing Types**: Support for both per-item and per-kg pricing
@@ -17,20 +17,20 @@ The Sweet Shop Management System is designed to streamline operations for tradit
 - **Order Status Tracking**: Update order status through the complete workflow
 - **User Management**: View registered customers
 
-### 👤 Customer Features
+### Customer Features
 - **Browse Products**: View available sweets with detailed information
 - **Shopping Cart**: Add items to cart with quantity management
 - **Order Placement**: Place orders with real-time availability checking
 - **Order History**: Track personal order history and status
 - **User Profile**: Manage personal information
 
-### 🔒 Authentication & Authorization
+### Authentication & Authorization
 - **JWT-based Authentication**: Secure login system
 - **Role-based Access Control**: Separate admin and customer interfaces
 - **User Registration**: New customer account creation
 - **Session Management**: Persistent login state
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend
 - **Java 21**
@@ -50,7 +50,7 @@ The Sweet Shop Management System is designed to streamline operations for tradit
 - **React Hook Form 7.62.0** (Form Management)
 - **Yup 1.7.0** (Form Validation)
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running this application, make sure you have the following installed:
 
@@ -60,152 +60,40 @@ Before running this application, make sure you have the following installed:
 - **MySQL 8.0** or higher
 - **Maven** (or use the included Maven wrapper)
 
-## 📁 Detailed Project Structure
+## Project Structure
 
 ```
 Sweet Shop Management/
-├── backend/                                    # Spring Boot Backend Application
-│   ├── .gitattributes                         # Git line ending configuration
-│   ├── .gitignore                             # Backend-specific Git ignore rules
-│   ├── .mvn/                                  # Maven wrapper configuration
-│   ├── HELP.md                                # Maven project help documentation
-│   ├── mvnw                                   # Maven wrapper script (Unix/Linux)
-│   ├── mvnw.cmd                               # Maven wrapper script (Windows)
-│   ├── pom.xml                                # Maven project configuration & dependencies
-│   ├── setup_database.sql                    # Database initialization script
-│   ├── src/main/java/com/sweetshop/sweet_shop_management/
-│   │   ├── SweetShopManagementApplication.java # Main Spring Boot application class
-│   │   ├── config/                            # Configuration classes
-│   │   │   ├── ApplicationLifecycleConfig.java # Application startup/shutdown events
-│   │   │   ├── CorsConfig.java               # Cross-Origin Resource Sharing configuration
-│   │   │   ├── JwtConfig.java                # JWT token configuration
-│   │   │   └── SecurityConfig.java           # Spring Security configuration
-│   │   ├── controller/                       # REST API endpoints
-│   │   │   ├── AuthController.java           # Authentication & authorization endpoints
-│   │   │   ├── OrderController.java          # Order management endpoints
-│   │   │   ├── SweetController.java          # Sweet/product management endpoints
-│   │   │   └── UserController.java           # User management endpoints
-│   │   ├── dto/                              # Data Transfer Objects
-│   │   │   ├── request/                      # Request DTOs
-│   │   │   │   ├── LoginRequest.java         # User login request
-│   │   │   │   ├── OrderCreateRequest.java   # Order creation request
-│   │   │   │   ├── RegisterRequest.java      # User registration request
-│   │   │   │   ├── SweetCreateRequest.java   # Sweet creation request
-│   │   │   │   └── SweetUpdateRequest.java   # Sweet update request
-│   │   │   └── response/                     # Response DTOs
-│   │   │       ├── AuthResponse.java         # Authentication response
-│   │   │       ├── OrderResponse.java        # Order data response
-│   │   │       ├── SweetResponse.java        # Sweet data response
-│   │   │       └── UserResponse.java         # User data response
-│   │   ├── model/                            # JPA Entity classes
-│   │   │   ├── Order.java                    # Order entity (customer orders)
-│   │   │   ├── OrderItem.java                # Order item entity (items within orders)
-│   │   │   ├── Sweet.java                    # Sweet/product entity
-│   │   │   └── User.java                     # User entity (admin/customer)
-│   │   ├── repository/                       # JPA data repositories
-│   │   │   ├── OrderItemRepository.java      # Order item data access
-│   │   │   ├── OrderRepository.java          # Order data access
-│   │   │   ├── SweetRepository.java          # Sweet data access
-│   │   │   └── UserRepository.java           # User data access
-│   │   ├── service/                          # Business logic services
-│   │   │   ├── impl/                         # Service implementations
-│   │   │   │   ├── AuthServiceImpl.java      # Authentication service implementation
-│   │   │   │   ├── OrderServiceImpl.java     # Order management service implementation
-│   │   │   │   ├── SweetServiceImpl.java     # Sweet management service implementation
-│   │   │   │   └── UserServiceImpl.java      # User management service implementation
-│   │   │   ├── AuthService.java              # Authentication service interface
-│   │   │   ├── DataInitializationService.java # Demo data setup service
-│   │   │   ├── OrderService.java             # Order management service interface
-│   │   │   ├── SweetService.java             # Sweet management service interface
-│   │   │   └── UserService.java              # User management service interface
-│   │   └── util/                             # Utility classes
-│   │       ├── JwtUtil.java                  # JWT token generation & validation utilities
-│   │       └── PasswordUtil.java             # Password hashing & validation utilities
-│   ├── src/main/resources/
-│   │   ├── application.properties            # Application configuration (database, JWT, etc.)
-│   │   ├── static/                           # Static web resources (empty for API-only backend)
-│   │   └── templates/                        # Template files (empty for API-only backend)
-│   ├── src/test/java/                        # Test classes
-│   │   └── com/sweetshop/sweet_shop_management/
-│   │       └── SweetShopManagementApplicationTests.java # Main application tests
-│   └── target/                               # Compiled classes & build artifacts (generated)
-│       ├── classes/                          # Compiled Java classes
-│       ├── generated-sources/                # Generated source files
-│       ├── generated-test-sources/           # Generated test source files
-│       └── test-classes/                     # Compiled test classes
-├── frontend/                                 # React TypeScript Frontend Application
-│   ├── .gitignore                            # Frontend-specific Git ignore rules
-│   ├── package.json                          # NPM dependencies & scripts
-│   ├── package-lock.json                     # NPM lock file (auto-generated)
-│   ├── tsconfig.json                         # TypeScript compiler configuration
-│   ├── public/                               # Static public assets
-│   │   ├── index.html                        # Main HTML template
-│   │   ├── favicon.ico                       # Application favicon
-│   │   ├── logo192.png                       # App logo (192x192)
-│   │   ├── logo512.png                       # App logo (512x512)
-│   │   ├── manifest.json                     # Progressive Web App manifest
-│   │   └── robots.txt                        # Search engine crawling rules
-│   ├── src/                                  # Source code
-│   │   ├── components/                       # Reusable UI components
-│   │   │   ├── common/                       # Common shared components
-│   │   │   │   ├── ConfirmDialog.tsx         # Confirmation dialog component
-│   │   │   │   ├── ErrorBoundary.tsx         # Error boundary for error handling
-│   │   │   │   └── LoadingSpinner.tsx        # Loading spinner component
-│   │   │   ├── forms/                        # Form components
-│   │   │   │   ├── LoginForm.tsx             # User login form
-│   │   │   │   ├── RegisterForm.tsx          # User registration form
-│   │   │   │   └── SweetForm.tsx             # Sweet creation/editing form
-│   │   │   └── layout/                       # Layout components
-│   │   │       ├── Footer.tsx                # Application footer
-│   │   │       ├── Layout.tsx                # Main layout wrapper
-│   │   │       └── Navbar.tsx                # Navigation bar component
-│   │   ├── context/                          # React Context providers
-│   │   │   ├── AuthContext.tsx               # Authentication state management
-│   │   │   └── CartContext.tsx               # Shopping cart state management
-│   │   ├── hooks/                            # Custom React hooks
-│   │   │   ├── useAuth.ts                    # Authentication hook
-│   │   │   ├── useCart.ts                    # Cart management hook
-│   │   │   └── useLocalStorage.ts            # Local storage persistence hook
-│   │   ├── pages/                            # Page-level components
-│   │   │   ├── AdminPage.css                 # Admin dashboard styles
-│   │   │   ├── AdminPage.tsx                 # Admin dashboard page
-│   │   │   ├── CartPage.css                  # Shopping cart page styles
-│   │   │   ├── CartPage.tsx                  # Shopping cart page
-│   │   │   ├── HomePage.css                  # Home page styles
-│   │   │   ├── HomePage.tsx                  # Landing/home page
-│   │   │   ├── LoginPage.tsx                 # User login page
-│   │   │   ├── OrdersPage.css                # Orders page styles
-│   │   │   ├── OrdersPage.tsx                # Order history/management page
-│   │   │   ├── ProductsPage.css              # Products catalog page styles
-│   │   │   ├── ProductsPage.tsx              # Products catalog page
-│   │   │   ├── RegisterPage.tsx              # User registration page
-│   │   │   └── auth.css                      # Authentication pages styles
-│   │   ├── services/                         # API service layer
-│   │   │   ├── api.ts                        # Base Axios API configuration
-│   │   │   ├── authService.ts                # Authentication API calls
-│   │   │   ├── cartService.ts                # Cart management service
-│   │   │   ├── orderService.ts               # Order management API calls
-│   │   │   ├── sweetService.ts               # Sweet/product API calls
-│   │   │   └── userService.ts                # User management API calls
-│   │   ├── types/                            # TypeScript type definitions
-│   │   │   └── index.ts                      # All interface & type definitions
-│   │   ├── utils/                            # Utility functions
-│   │   │   ├── constants.ts                  # Application constants
-│   │   │   ├── formatters.ts                 # Data formatting utilities
-│   │   │   └── validators.ts                 # Form validation utilities
-│   │   ├── App.css                           # Global application styles
-│   │   ├── App.tsx                           # Main application component
-│   │   ├── index.css                         # Global CSS styles
-│   │   ├── index.tsx                         # React application entry point
-│   │   └── react-app-env.d.ts                # React TypeScript environment types
-│   └── node_modules/                         # NPM dependencies (auto-generated, ignored)
-├── .gitignore                                # Root Git ignore rules
-├── API_DOCUMENTATION_SUMMARY.md              # API documentation summary
-├── package.json                              # Root package.json (if any workspace scripts)
-└── README.md                                 # This documentation file
+├── backend/                    # Spring Boot Backend Application
+│   ├── src/main/java/          # Java source code
+│   │   └── com/sweetshop/      # Main application package
+│   │       ├── config/         # Configuration classes
+│   │       ├── controller/     # REST API endpoints
+│   │       ├── dto/            # Data Transfer Objects
+│   │       ├── model/          # JPA Entity classes
+│   │       ├── repository/     # Data repositories
+│   │       ├── service/        # Business logic services
+│   │       └── util/           # Utility classes
+│   ├── src/main/resources/     # Application resources
+│   ├── src/test/               # Test classes
+│   └── pom.xml                 # Maven configuration
+├── frontend/                   # React TypeScript Frontend
+│   ├── public/                 # Static assets
+│   ├── src/                    # Source code
+│   │   ├── components/         # Reusable UI components
+│   │   ├── context/            # React Context providers
+│   │   ├── hooks/              # Custom React hooks
+│   │   ├── pages/              # Page components
+│   │   ├── services/           # API service layer
+│   │   ├── types/              # TypeScript definitions
+│   │   └── utils/              # Utility functions
+│   ├── package.json            # NPM dependencies
+│   └── tsconfig.json           # TypeScript configuration
+├── .gitignore                  # Git ignore rules
+└── README.md                   # Project documentation
 ```
 
-### 🏗️ Architecture Overview
+### Architecture Overview
 
 #### Backend Architecture (Spring Boot)
 - **Controller Layer**: REST API endpoints handling HTTP requests/responses
@@ -235,7 +123,7 @@ Sweet Shop Management/
 - **Observer Pattern**: React state updates and re-rendering
 - **Factory Pattern**: JWT token creation and validation
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -243,37 +131,80 @@ git clone <repository-url>
 cd Sweet-Shop-Management
 ```
 
-### 2. Database Setup
+### 2. Prerequisites Installation
 
-1. **Create MySQL Database**:
+**Backend Requirements:**
+- Install Java 21 or higher
+- Install MySQL 8.0 or higher
+- Ensure Maven is installed (or use included wrapper)
+
+**Frontend Requirements:**
+- Install Node.js 16 or higher
+- Install npm or yarn package manager
+
+### 3. Database Setup
+
+1. **Start MySQL Service**:
+```bash
+# Windows
+net start mysql
+
+# macOS (with Homebrew)
+brew services start mysql
+
+# Linux
+sudo systemctl start mysql
+```
+
+2. **Create MySQL Database**:
 ```sql
 CREATE DATABASE sweet_shop_db;
+CREATE USER 'sweetshop_user'@'localhost' IDENTIFIED BY 'sweetshop_password';
+GRANT ALL PRIVILEGES ON sweet_shop_db.* TO 'sweetshop_user'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
-2. **Configure Database Connection**:
+3. **Configure Database Connection**:
 Edit `backend/src/main/resources/application.properties`:
 ```properties
+# Database Configuration
 spring.datasource.url=jdbc:mysql://localhost:3306/sweet_shop_db
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.username=sweetshop_user
+spring.datasource.password=sweetshop_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# JWT Configuration
+app.jwt.secret=mySecretKey
+app.jwt.expiration=86400000
 ```
 
-### 3. Backend Setup
+### 4. Backend Setup
 
 ```bash
 # Navigate to backend directory
 cd backend
 
-# Clean and compile
+# Clean and compile (first time setup)
 ./mvnw clean compile
 
-# Run the application
+# Run tests to verify setup
+./mvnw test
+
+# Start the application
 ./mvnw spring-boot:run
 ```
 
-The backend will start on `http://localhost:8080`
+**Verification Steps:**
+- Backend will start on `http://localhost:8080`
+- Check health: `http://localhost:8080/actuator/health` (should return UP)
+- API documentation: `http://localhost:8080/swagger-ui.html`
 
-### 4. Frontend Setup
+### 5. Frontend Setup
 
 ```bash
 # Navigate to frontend directory
@@ -282,13 +213,29 @@ cd frontend
 # Install dependencies
 npm install
 
-# Start the development server
+# Verify installation
+npm audit
+
+# Start development server
 npm start
 ```
 
-The frontend will start on `http://localhost:3000`
+**Verification Steps:**
+- Frontend will start on `http://localhost:3000`
+- Application should automatically open in your default browser
+- Check console for any compilation errors
 
-## 🔑 Default User Accounts
+### 6. Application Testing
+
+**Access the Application:**
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:8080/api/v1`
+
+**Test Login:**
+- Admin: `admin@sweetshop.com` / `admin123`
+- Customer: `user@sweetshop.com` / `user123`
+
+## Default User Accounts
 
 The application comes with pre-configured demo accounts:
 
@@ -302,7 +249,7 @@ The application comes with pre-configured demo accounts:
 - **Password**: `user123`
 - **Role**: Customer
 
-## 🎯 Key Features in Detail
+## Key Features in Detail
 
 ### Sweet Management
 - **Comprehensive Inventory**: Manage sweet details including name, description, price, and quantity
@@ -324,7 +271,7 @@ The application comes with pre-configured demo accounts:
 - **Role-based Authorization**: Protected admin endpoints
 - **CORS Configuration**: Secure cross-origin requests
 
-## 🌐 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/v1/auth/login` - User login
@@ -341,7 +288,7 @@ The application comes with pre-configured demo accounts:
 - `POST /api/v1/orders` - Create new order
 - `PUT /api/v1/orders/{id}/status` - Update order status (Admin)
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -358,7 +305,7 @@ The application comes with pre-configured demo accounts:
    - Verify frontend URL in backend CORS configuration
    - Check that both servers are running on correct ports
 
-## 🔧 Development
+## Development
 
 ### Adding New Features
 1. **Backend**: Add controllers, services, and entities as needed
@@ -376,21 +323,114 @@ cd frontend
 npm test
 ```
 
-## � License
+## License
 
 This project is developed as a learning exercise and demonstration of full-stack development capabilities.
 
-## 🤝 Contributing
+## Contributing
 
 This is a personal project, but suggestions and improvements are welcome!
 
-## 📞 Support
+## Support
 
 For any issues or questions, please check the troubleshooting section or review the code documentation.
 
+## Test Report
+
+### Backend Tests Status
+```bash
+# Run backend tests
+cd backend
+./mvnw test
+```
+
+**Current Test Configuration:**
+- **Test Framework**: JUnit 5 with Spring Boot Test
+- **Mock Framework**: Mockito
+- **Test Database**: H2 in-memory database for testing
+- **Coverage Tool**: JaCoCo Maven Plugin
+
+**Available Test Suites** (Currently in test_disabled directory):
+- **Controller Tests**: Authentication, Sweet Management, Order Management
+- **Service Tests**: Business Logic validation
+- **Integration Tests**: End-to-end API testing
+- **Security Tests**: JWT authentication and authorization
+
+**Note**: Tests are currently disabled during development phase. To enable tests:
+1. Rename `src/test_disabled` to `src/test`
+2. Configure test database properties
+3. Run `./mvnw test` to execute test suite
+
+**Expected Test Coverage:**
+- Controller Layer: 95%
+- Service Layer: 90%
+- Repository Layer: 85%
+- Overall Coverage Target: 85%
+
+### Frontend Tests Status
+```bash
+# Run frontend tests
+cd frontend
+npm test
+```
+
+**Current Test Configuration:**
+- **Test Framework**: Jest with React Testing Library
+- **Type Checking**: TypeScript compiler
+- **Component Testing**: React Testing Library
+- **Coverage Tool**: Jest Coverage Reports
+
+**Available Tests:**
+- **App.test.tsx**: Basic application rendering test
+- **Component Tests**: Individual component functionality (to be expanded)
+- **Service Tests**: API service layer testing (to be implemented)
+- **Hook Tests**: Custom React hooks testing (to be implemented)
+
+**Test Execution:**
+```bash
+# Current basic test
+npm test -- --coverage --watchAll=false
+```
+
+**Expected Test Coverage Goals:**
+- Component Tests: 80%
+- Service Layer: 85%
+- Utility Functions: 90%
+- Overall Coverage Target: 80%
+
+### Test Development Status
+This project is in active development with comprehensive test suites planned. The testing strategy includes:
+
+1. **Unit Tests**: Individual component and function testing
+2. **Integration Tests**: API endpoint and database integration testing
+3. **End-to-End Tests**: Complete user workflow testing
+4. **Security Tests**: Authentication and authorization validation
+5. **Performance Tests**: Load and response time testing
+
+*Test implementation is prioritized for production deployment.*
+
+## My AI Usage
+
+This project was developed with the assistance of AI tools to enhance code quality and structure:
+
+### Backend Development
+- **ChatGPT**: Used for backend code structure, Spring Boot architecture design, and Java implementation guidance
+- **Code Structure**: AI assistance helped in organizing the layered architecture (Controller, Service, Repository, Model)
+- **Best Practices**: Implementation of proper Spring Boot patterns and security configurations
+
+### Frontend Development  
+- **Claude & ChatGPT**: Collaborative AI assistance for React TypeScript frontend development
+- **Component Architecture**: AI guidance for React component structure and TypeScript implementation
+- **UI/UX Design**: Assistance with Material-UI integration and responsive design patterns
+
+### Key AI Contributions
+- **Project Architecture**: Overall full-stack application structure and design patterns
+- **Code Organization**: Proper separation of concerns and modular development approach
+- **Documentation**: Comprehensive README and code documentation
+- **Best Practices**: Implementation of modern development standards and security practices
+
+*This project demonstrates the effective collaboration between human creativity and AI assistance in modern software development.*
+
 ---
 
-**Mithu Sweet Bhandar** - A modern solution for traditional sweet shop management! 🍬✨
-=======
-# Sweet-Shop-Management
->>>>>>> 77dd51ea2a8964f9ba02d9bd39ce79e428a69f3f
+**Mithu Sweet Bhandar** - A modern solution for traditional sweet shop management!
