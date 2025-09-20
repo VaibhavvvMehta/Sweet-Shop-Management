@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sweet Shop Management System
 
 A full-stack web application for managing a traditional Indian sweet shop, built with **Spring Boot** backend and **React TypeScript** frontend.
@@ -390,3 +391,6 @@ For any issues or questions, please check the troubleshooting section or review 
 ---
 
 **Mithu Sweet Bhandar** - A modern solution for traditional sweet shop management! 🍬✨
+=======
+# Sweet-Shop-Management
+>>>>>>> 77dd51ea2a8964f9ba02d9bd39ce79e428a69f3f
